@@ -38,6 +38,7 @@ import androidx.test.espresso.base.Default
 import com.example.weatherapp.MainActivity
 import com.example.weatherapp.images
 import com.example.weatherapp.modes.dailyForcast
+import com.example.weatherapp.modes.days_menu
 import kotlinx.coroutines.selects.select
 
 
@@ -101,7 +102,7 @@ fun nav_T() {
                         label = { Text("daily  forcast") },
                         selected = selectedIndex == 1,
                         onClick = {
-                            selectedIndex = 0
+                            selectedIndex = 1
                             navController.navigate(route = "current forcast") {
                                 popUpTo(navController.graph.findStartDestination().id) {
                                     saveState = true
@@ -122,19 +123,25 @@ fun nav_T() {
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally,
 
-                ) {
-                    images()
-                    Text("feels like 43.")
+                ) {  when(selectedIndex){
+                    0 -> images()
+
+                    1 -> dailyForcast()
+
+
+                    else -> {}
+                }
+
                     NavHost(
                     navController = navController,
                     startDestination = "daily Forcast",
                     modifier = Modifier.padding(innerPadding)
                 ) {
                     composable(route = "current Forcast") {
-                        MainActivity()
+
                     }
                     composable(route = "daily forcast") {
-                        dailyForcast()
+                        MainActivity()
                     }
 
                 }

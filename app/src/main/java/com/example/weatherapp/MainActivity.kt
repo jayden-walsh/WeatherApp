@@ -39,7 +39,9 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    WeatherAppTheme {} }
+    WeatherAppTheme {
+
+    } }
 @Composable
 fun images(){
     Image(
