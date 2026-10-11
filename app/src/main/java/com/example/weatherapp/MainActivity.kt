@@ -17,7 +17,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.weatherapp.ui.theme.WeatherAppTheme
-import com.example.weatherapp.ui.theme.nav
+import com.example.weatherapp.ui.theme.nav_T
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,41 +27,30 @@ class MainActivity : ComponentActivity() {
             WeatherAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     images()
-                    nav()
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    nav_T()
+
+
+
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier,
-        color = Color.Blue
-    )
-}
+
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    WeatherAppTheme {
-
-
-    }
-}
+    WeatherAppTheme {} }
 @Composable
 fun images(){
     Image(
         painter = painterResource(id = R.drawable.rain),
         contentDescription = "Rain",
         modifier = Modifier
-            .size(150.dp)
+            .size(120.dp)
+
 
     )
 }
