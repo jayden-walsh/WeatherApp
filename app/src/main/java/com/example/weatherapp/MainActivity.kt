@@ -26,10 +26,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             WeatherAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    images()
                     nav_T()
-
-
 
                 }
             }

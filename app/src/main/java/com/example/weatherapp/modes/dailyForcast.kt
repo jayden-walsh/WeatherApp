@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.gestures.anchoredDraggable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -25,26 +26,13 @@ import com.example.weatherapp.ui.theme.WeatherAppTheme
 import com.example.weatherapp.ui.theme.nav_T
 
 
-class dailyForcast : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            WeatherAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-
-
-
-
-                }
-            }
-        }
-    }
-}
 
 
 
 @Composable
-fun Lookup(){
+fun dailyForcast(){
+    Column(modifier = Modifier.fillMaxSize().padding()
+
+    ) { }
 
 }
