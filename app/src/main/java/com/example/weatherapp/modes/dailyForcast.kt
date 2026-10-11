@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -47,7 +48,7 @@ import com.example.weatherapp.ui.theme.nav_T
 
 @Composable
 fun dailyForcast(){
-    Column(modifier = Modifier.fillMaxSize().padding(),
+    Column(modifier = Modifier,
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -62,15 +63,15 @@ fun dailyForcast(){
 @Composable
 fun monday(
 
-){ Column(modifier = Modifier.fillMaxSize().padding(),
+){ Column(modifier = Modifier.padding(5.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,{
         Image(
             painter = painterResource(id = R.drawable.sun),
             contentDescription = "sun",
-            modifier = Modifier.size(120.dp)
+            modifier = Modifier.size(100.dp)
         )
-        Text("it feels like 5")
+        Text("monday. feels like 5")
     })
 }
 
@@ -78,31 +79,47 @@ fun monday(
 @Composable
 fun tuesday(
 ){
-    Column(modifier = Modifier.fillMaxSize().padding(),
+    Column(modifier = Modifier.padding(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,{
             Image(
-                painter = painterResource(id = R.drawable.sun),
-                contentDescription = "sun",
+                painter = painterResource(id = R.drawable.rain),
+                contentDescription = "rain",
                 modifier = Modifier.size(120.dp)
             )
-            Text("it feels like 7")
+            Text("Tuesday.  feels like 7")
+        })
+}
+@Composable
+fun wedsenday(
+){
+    Column(modifier = Modifier.padding(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,{
+            Image(
+                painter = painterResource(id = R.drawable.cloudy),
+                contentDescription = "cloudy",
+                modifier = Modifier.size(120.dp)
+            )
+            Text("Tuesday.  feels like 7")
         })
 }
 
 
-@Composable
+@Composable//tring to change for the commit
 fun days_menu() {
     var days by remember { mutableIntStateOf(0) }
-    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-        Column( modifier = Modifier.fillMaxSize()
+    Scaffold() { innerPadding ->
+        Column( modifier = Modifier.fillMaxWidth()
             .padding()
         )
             {
                 monday()
-                HorizontalDivider()
+                HorizontalDivider(thickness = 2.dp)
                 tuesday()
-                HorizontalDivider()
+                HorizontalDivider(thickness = 2.dp)
+                wedsenday()
+                HorizontalDivider(thickness = 2.dp)
 
             }
 
