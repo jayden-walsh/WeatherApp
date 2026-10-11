@@ -63,7 +63,7 @@ fun nav_T(){ // default set to 0
             var selectedIndex by remember { mutableIntStateOf(0) } // default set to 0
             Scaffold(
                 modifier = Modifier,
-        bottomBar = {
+            bottomBar = {
             NavigationBar(windowInsets = NavigationBarDefaults.windowInsets) {
 
                 NavigationBarItem(
@@ -86,8 +86,40 @@ fun nav_T(){ // default set to 0
 
 
                         }
-                    })}}
-            )}}}
+                        NavigationBarItem(
+                            icon = {
+                                Icon(
+                                    imageVector = Icons.Default.Search,
+                                    contentDescription = "search"
+                                )
+                            },
+                            label = { Text("screah") },
+                            selected = selectedIndex == 1,
+                            onClick = {
+                                selectedIndex = 0
+                                navController.navigate(route = "daily forcast ") {
+                                    popUpTo(navController.graph.findStartDestination().id) {
+                                        saveState = true
+                                    }
+                                    launchSingleTop = true
+                                    restoreState = true
+
+
+                                }
+                    })
+                NavHost(
+                    navController = navController,
+                    startDestination = "search",
+                    modifier = Modifier.padding(innerPadding)
+                ) {
+                    composable(route = "srearch") {
+                        Sreach()
+                    }
+                    composable(route = "daily forcast") {
+                        dailyForast()
+                    }
+                }})}
+            })}}}
 
 
 
