@@ -104,6 +104,20 @@ fun wedsenday(
             Text("Tuesday.  feels like 7")
         })
 }
+@Composable
+fun thurday(
+){
+    Column(modifier = Modifier.padding(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,{
+            Image(
+                painter = painterResource(id = R.drawable.cloudy),
+                contentDescription = "cloudy",
+                modifier = Modifier.size(120.dp)
+            )
+            Text("Thurday.  feels like 8")
+        })
+}
 
 
 @Composable//tring to change for the commit
@@ -114,11 +128,15 @@ fun days_menu() {
             .padding()
         )
             {
+
+                HorizontalDivider(thickness = 2.dp)
                 monday()
                 HorizontalDivider(thickness = 2.dp)
                 tuesday()
                 HorizontalDivider(thickness = 2.dp)
                 wedsenday()
+                HorizontalDivider(thickness = 2.dp)
+                thurday()
                 HorizontalDivider(thickness = 2.dp)
 
             }
