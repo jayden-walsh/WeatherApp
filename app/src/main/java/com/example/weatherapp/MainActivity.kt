@@ -49,7 +49,7 @@ fun images(){
         contentDescription = "Rain",
         modifier = Modifier
             .size(120.dp)
-
-
     )
+    Text("feels like 4")
+
 }
