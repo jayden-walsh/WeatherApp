@@ -45,11 +45,18 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.espresso.core)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.ui)
     testImplementation(libs.junit)
-
+    implementation("com.google.android.gms:play-services-location:21.4.0")
+    // Coil (use v3.4.0 for Kotlin compatibility)
+    implementation("io.coil-kt.coil3:coil-compose:3.4.0")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.4.0")
     // Navigation
     implementation(libs.androidx.navigation.compose)
-
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:3.0.0")
+// Retrofit GSON Converter
+    implementation("com.squareup.retrofit2:converter-gson:3.0.0")
     // Icons (for the nav menu buttons)
     implementation(libs.androidx.compose.material.icons.core)
     implementation(libs.androidx.compose.material.icons.extended)
